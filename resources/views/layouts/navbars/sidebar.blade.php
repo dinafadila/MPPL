@@ -1,11 +1,11 @@
-<div class="sidebar" data-color="orange" data-background-color="white" data-image="{{ asset('material') }}/img/sidebar-1.jpg">
+<div class="sidebar" data-color="green" data-background-color="white" data-image="{{ asset('material') }}/img/sidebar-1.jpg">
   <!--
       Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
       Tip 2: you can also add an image using data-image tag
   -->
   <div class="logo">
-      <i><img style="width:25px" src="{{ asset('material') }}/img/logo_tk.png"></i>
+      <img style="width:50px" src="{{ asset('material') }}/img/logo_tk.png">
       {{ __('TK Islam Raihan') }}
     </a>
   </div>
@@ -44,13 +44,13 @@
       <li class="nav-item{{ $activePage == 'icons' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('icons') }}">
           <i class="material-icons">bubble_chart</i>
-            <p>{{ __('Kalender Akademik') }}</p>
+            <p>{{ __('Rapot Anak') }}</p>
         </a>
       </li>
       <li class="nav-item{{ $activePage == 'notifications' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('notifications') }}">
           <i class="material-icons">notifications</i>
-            <p>{{ __('Rapot Anak') }}</p>
+            <p>{{ __('Kalender Akademik') }}</p>
         </a>
       </li>
       <li class="nav-item{{ $activePage == 'table' ? ' active' : '' }}">

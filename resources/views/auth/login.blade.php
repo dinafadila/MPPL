@@ -11,7 +11,7 @@
         @csrf
 
         <div class="card card-login card-hidden mb-3">
-          <div class="card-header card-header-primary text-center">
+          <div class="card-header card-header-success text-center">
             <h4 class="card-title"><strong>{{ __('Masuk') }}</strong></h4>
             <div class="social-line">
               <a href="#pablo" class="btn btn-just-icon btn-link btn-white">
@@ -26,7 +26,7 @@
             </div>
           </div>
           <div class="card-body">
-            <p class="card-description text-center">{{ __('Username dan Password Dummy') }} <strong>admin@material.com</strong> {{ __('and ') }}<strong>secret</strong> </p>
+            <p class="card-description text-center">{{ __('Username dan Password Dummy') }} <strong>admin@material.com</strong> {{ __('dan ') }}<strong>secret</strong> </p>
             <div class="bmd-form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
               <div class="input-group">
                 <div class="input-group-prepend">
@@ -59,7 +59,7 @@
             </div>
             <div class="form-check mr-auto ml-3 mt-3">
               <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('Remember me') }}
+                <input class="form-check-input" type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('Ingatkan saya') }}
                 <span class="form-check-sign">
                   <span class="check"></span>
                 </span>
@@ -67,7 +67,7 @@
             </div>
           </div>
           <div class="card-footer justify-content-center">
-            <button type="submit" class="btn btn-primary btn-link btn-lg">{{ __('Lets Go') }}</button>
+            <button type="submit" class="btn btn-success btn-link btn-lg">{{ __('Mulai') }}</button>
           </div>
         </div>
       </form>
