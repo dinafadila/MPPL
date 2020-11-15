@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use App\Models\Calendar;
 
 class CalendarController extends Controller
@@ -25,7 +26,11 @@ class CalendarController extends Controller
      */
     public function create(Request $request)
     {
-        $this->validate($request, Calendar::$rules['create']);
+        $validator = Validator::make($request->all(), Calendar::$rules['create']);
+
+        if ($validator->fails()){
+            return response()->json($validator->messages(), 200);
+        }
 
         $calendar = Calendar::create($request->all());
 
@@ -74,7 +79,11 @@ class CalendarController extends Controller
      */
     public function update(Request $request, $id = null)
     {
-        $this->validate($request, Calendar::$rules['update']);
+        $validator = Validator::make($request->all(), Calendar::$rules['update']);
+
+        if ($validator->fails()){
+            return response()->json($validator->messages(), 200);
+        }
 
         $calendar = Calendar::find($id);
 
