@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use App\Models\Saving;
 
 class SavingController extends Controller
@@ -25,7 +26,11 @@ class SavingController extends Controller
      */
     public function create(Request $request)
     {
-        $this->validate($request, Saving::$rules['create']);
+        $validator = Validator::make($request->all(), Saving::$rules['create']);
+
+        if ($validator->fails()){
+            return response()->json($validator->messages(), 200);
+        }
 
         $saving = Saving::create($request->all());
 
@@ -74,7 +79,11 @@ class SavingController extends Controller
      */
     public function update(Request $request, $id = null)
     {
-        $this->validate($request, Saving::$rules['update']);
+        $validator = Validator::make($request->all(), Saving::$rules['update']);
+
+        if ($validator->fails()){
+            return response()->json($validator->messages(), 200);
+        }
 
         $saving = Saving::find($id);
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use App\Models\Report;
 
 class ReportController extends Controller
@@ -25,9 +26,13 @@ class ReportController extends Controller
      */
     public function create(Request $request)
     {
-        $this->validate($request, Report::$rules['create']);
+        $validator = Validator::make($request->all(), Report::$rules['create']);
 
-        $report = report::create($request->all());
+        if ($validator->fails()){
+            return response()->json($validator->messages(), 200);
+        }
+
+        $report = Report::create($request->all());
 
         return $this->responseHandler(['report' => $report], 201, 'Berhasil membuat rapor baru');
     }
@@ -74,7 +79,11 @@ class ReportController extends Controller
      */
     public function update(Request $request, $id = null)
     {
-        $this->validate($request, Report::$rules['update']);
+        $validator = Validator::make($request->all(), Report::$rules['update']);
+
+        if ($validator->fails()){
+            return response()->json($validator->messages(), 200);
+        }
 
         $report = Report::find($id);
 

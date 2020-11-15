@@ -18,7 +18,7 @@ class CreateReportsTable extends Migration
             $table->foreignId('student_id');
             $table->string('group');
             $table->integer('semester');
-            $table->year('school_year');
+            $table->string('school_year');
             $table->longText('religion_and_moral');
             $table->longText('social_emotional_and_autonomy');
             $table->longText('language');
@@ -28,10 +28,11 @@ class CreateReportsTable extends Migration
             $table->string('extracurricular');
             $table->enum('grade_of_extracurricular', ['A', 'B', 'C', 'K']);
             $table->longText('description');
-            $table->integer('sakit');
-            $table->integer('izin');
-            $table->integer('alpa');
+            $table->integer('sick');
+            $table->integer('permit');
+            $table->integer('absent');
             $table->longText('note_for_parents');
+            $table->date('date_of_report');
             $table->timestamps();
         });
     }

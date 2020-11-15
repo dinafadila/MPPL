@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use App\Models\Fee;
 
 class FeeController extends Controller
@@ -25,7 +26,11 @@ class FeeController extends Controller
      */
     public function create(Request $request)
     {
-        $this->validate($request, Fee::$rules['create']);
+        $validator = Validator::make($request->all(), Fee::$rules['create']);
+
+        if ($validator->fails()){
+            return response()->json($validator->messages(), 200);
+        }
 
         $fee = Fee::create($request->all());
 
@@ -74,7 +79,11 @@ class FeeController extends Controller
      */
     public function update(Request $request, $id = null)
     {
-        $this->validate($request, Fee::$rules['update']);
+        $validator = Validator::make($request->all(), Fee::$rules['update']);
+
+        if ($validator->fails()){
+            return response()->json($validator->messages(), 200);
+        }
 
         $fee = Fee::find($id);
 
