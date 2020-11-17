@@ -13,22 +13,7 @@ class Calendar extends Model
     protected $primaryKey = 'id';
     public $incrementing = true;
     protected $attributes = [];
-    protected $fillable = [
-        'date_of_event',
-        'name_of_event',
-        'information',
-    ];
+    protected $fillable = [];
     protected $hidden = [];
-    public static $rules = [
-        'create' => [
-            'date_of_event' => 'required|date',
-            'name_of_event' => 'required|string|min:3|max:30',
-            'information' => 'required|string|min:3|max:100',
-        ],
-        'update' => [
-            'date_of_event' => 'nullable|date',
-            'name_of_event' => 'nullable|string|min:3|max:30',
-            'information' => 'nullable|string|min:3|max:100',
-        ],
-    ];
+    public static $rules = [];
 }
