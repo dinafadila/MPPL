@@ -25,12 +25,8 @@ Auth::routes();
 Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home')->middleware('auth');
 
 Route::group(['middleware' => 'auth'], function () {
-	Route::get('sppsiswa', function () {
-		return view('pages.sppsiswa');
-	})->name('table');
-
-	Route::get('sppadmin', function () {
-		return view('pagesadmin.sppadmin');
+	Route::get('table-list', function () {
+		return view('pages.table_list');
 	})->name('table');
 
 	Route::get('typography', function () {
