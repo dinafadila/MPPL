@@ -4,275 +4,148 @@
 <div class="content">
   <div class="container-fluid">
     <div class="container-fluid">
-      <div class="card card-plain">
+      <div class="card">
         <div class="card-header card-header-success">
           <h4 class="card-title">Rapot Anak</h4>
           <p class="card-category">Semester Ganjil</p>
         </div>
+        <br>
+        <!-- NAVBAR UNTUK BIDANG PENGEMBANGAN (masih coba)
+        <nav>
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
+            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</a>
+            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
+          </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">...</div>
+          <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
+          <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+        </div>
+        !-->
         <div class="card-body">
             <div class="table-responsive">
               <table class="table">
                 <thead class=" text-success">
-                  <th>
-                    No
-                  </th>
-                  <th>
-                    Indikator Keberhasilan
-                  </th>
-                  <th>
-                    Penilaian Lisan
-                  </th>
-                  <th>
-                    Dokumentasi Kegiatan
-                  </th>
-                  <th>
-                    Keterangan
-                  </th>
-                </thead>
                 <tbody>
                   <tr>
+                    <th>
+                      A. BIDANG PENGEMBANGAN PEMBENTUKAN PERILAKU 
+                    </th>
+                  </tr>
+                  <tr>
                     <td>
-                      1
-                    </td>
-                    <td>
-                      Nilai-nilai Agama dan Moral
-                    </td>
-                    <td>
-                      ...
-                    </td>
-                    <td>
-                      ...
-                    </td>
-                    <td class="text-primary">
-                      ...
+                      1. Nilai-nilai Agama dan Moral
                     </td>
                   </tr>
                   <tr>
-                  <td>
-                      2
-                    </td>
                     <td>
-                      Sosial, Emosional dan Kemandirian
-                    </td>
-                    <td>
-                      ...
-                    </td>
-                    <td>
-                      ...
-                    </td>
-                    <td class="text-primary">
-                      ...
+                      <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Keterangan</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>
+                      <p>Upload Dokumentasi Kegiatan</p>
+                      <input id="input-b2" name="input-b2" type="file" class="file" data-show-preview="false">
                     </td>
                   </tr>
                   <tr>
-                  <td>
-                      3
-                    </td>
                     <td>
-                      Bahasa
-                    </td>
-                    <td>
-                      ...
-                    </td>
-                    <td>
-                      ...
-                    </td>
-                    <td class="text-primary">
-                      ...
+                      2. Sosial, Emosional dan Kemandirian
                     </td>
                   </tr>
                   <tr>
-                  <td>
-                      4
-                    </td>
                     <td>
-                      Kognitif
-                    </td>
-                    <td>
-                      ...
-                    </td>
-                    <td>
-                      ...
-                    </td>
-                    <td class="text-primary">
-                      ...
-                    </td>
-                  <tr>
-                  <td>
-                      5
-                    </td>
-                    <td>
-                      Fisik
-                    </td>
-                    <td>
-                      ...
-                    </td>
-                    <td>
-                      ...
-                    </td>
-                    <td class="text-primary">
-                      ...
-                    </td>
-                  </tr>
-                  <tr>
-                  <td>
-                      6
-                    </td>
-                    <td>
-                      Seni
-                    </td>
-                    <td>
-                      ...
-                    </td>
-                    <td>
-                      ...
-                    </td>
-                    <td class="text-primary">
-                      ...
+                      <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Keterangan</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>
+                      <p>Upload Dokumentasi Kegiatan</p>
+                      <input id="input-b2" name="input-b2" type="file" class="file" data-show-preview="false">
                     </td>
                   </tr>
                 </tbody>
               </table>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--
-      <div class="col-md-12">
-        <div class="card card-plain">
-          <div class="card-header card-header-primary">
-            <h4 class="card-title mt-0"> Table on Plain Background</h4>
-            <p class="card-category"> Here is a subtitle for this table</p>
-          </div>
-          <div class="card-body">
-            <div class="table-responsive">
-              <table class="table table-hover">
-                <thead class="">
-                  <th>
-                    ID
-                  </th>
-                  <th>
-                    Name
-                  </th>
-                  <th>
-                    Country
-                  </th>
-                  <th>
-                    City
-                  </th>
-                  <th>
-                    Salary
-                  </th>
-                </thead>
+
+              <table class="table">
+                <thead class=" text-success">
                 <tbody>
                   <tr>
+                    <th>
+                      B. BIDANG PENGEMBANGAN KEMAMPUAN DASAR
+                    </th>
+                  </tr>
+                  <tr>
                     <td>
-                      1
-                    </td>
-                    <td>
-                      Dakota Rice
-                    </td>
-                    <td>
-                      Niger
-                    </td>
-                    <td>
-                      Oud-Turnhout
-                    </td>
-                    <td>
-                      $36,738
+                      1. Bahasa
                     </td>
                   </tr>
                   <tr>
                     <td>
-                      2
-                    </td>
-                    <td>
-                      Minerva Hooper
-                    </td>
-                    <td>
-                      Curaçao
-                    </td>
-                    <td>
-                      Sinaai-Waas
-                    </td>
-                    <td>
-                      $23,789
+                      <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Keterangan</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>
+                      <p>Upload Dokumentasi Kegiatan</p>
+                      <input id="input-b2" name="input-b2" type="file" class="file" data-show-preview="false">
                     </td>
                   </tr>
                   <tr>
                     <td>
-                      3
-                    </td>
-                    <td>
-                      Sage Rodriguez
-                    </td>
-                    <td>
-                      Netherlands
-                    </td>
-                    <td>
-                      Baileux
-                    </td>
-                    <td>
-                      $56,142
+                      2. Kognitif
                     </td>
                   </tr>
                   <tr>
                     <td>
-                      4
-                    </td>
-                    <td>
-                      Philip Chaney
-                    </td>
-                    <td>
-                      Korea, South
-                    </td>
-                    <td>
-                      Overland Park
-                    </td>
-                    <td>
-                      $38,735
+                      <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Keterangan</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>
+                      <p>Upload Dokumentasi Kegiatan</p>
+                      <input id="input-b2" name="input-b2" type="file" class="file" data-show-preview="false">
                     </td>
                   </tr>
                   <tr>
                     <td>
-                      5
-                    </td>
-                    <td>
-                      Doris Greene
-                    </td>
-                    <td>
-                      Malawi
-                    </td>
-                    <td>
-                      Feldkirchen in Kärnten
-                    </td>
-                    <td>
-                      $63,542
+                      3. Fisik
                     </td>
                   </tr>
                   <tr>
                     <td>
-                      6
+                      <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Keterangan</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>
+                      <p>Upload Dokumentasi Kegiatan</p>
+                      <input id="input-b2" name="input-b2" type="file" class="file" data-show-preview="false">
                     </td>
+                  </tr>
+                  <tr>
                     <td>
-                      Mason Porter
+                      4. Seni
                     </td>
+                  </tr>
+                  <tr>
                     <td>
-                      Chile
-                    </td>
-                    <td>
-                      Gloucester
-                    </td>
-                    <td>
-                      $78,615
+                      <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Keterangan</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>
+                      <p>Upload Dokumentasi Kegiatan</p>
+                      <input id="input-b2" name="input-b2" type="file" class="file" data-show-preview="false">
                     </td>
                   </tr>
                 </tbody>
               </table>
+              
+              <div class = "text-right">
+                <button type="update" class="btn btn-warning">{{ __('Update') }}</button>
+                <button type="submit" class="btn btn-success">{{ __('Save') }}</button>
+              </div>
             </div>
+          </div>
         </div>
       </div>
-      !-->
     </div>
   </div>
 </div>
