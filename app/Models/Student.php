@@ -14,6 +14,7 @@ class Student extends Model
     public $incrementing = true;
     protected $attributes = [];
     protected $fillable = [
+        'user_id',
         'name',
         'gender',
         'place_of_birth',
@@ -28,6 +29,7 @@ class Student extends Model
     protected $hidden = [];
     public static $rules = [
         'create' => [
+            'user_id' => 'required|numeric',
             'name' => 'required|string|min:3|max:50',
             'gender' => 'required|string|in:Laki-laki,Perempuan',
             'place_of_birth' => 'required|string|min:3|max:20',
@@ -40,6 +42,7 @@ class Student extends Model
             'mother_name' => 'required|string|min:3|max:50',
         ],
         'update' => [
+            'user_id' => 'user_id',
             'name' => 'nullable|string|min:3|max:50',
             'gender' => 'nullable|string|in:Laki-laki,Perempuan',
             'place_of_birth' => 'nullable|string|min:3|max:20',
