@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'notifications', 'titlePage' => __('Kalender Akademik')])
+@extends('layouts.app', ['activePage' => 'calendar', 'titlePage' => __('Kalender Akademik')])
 
 @section('content')
 <div class="content">

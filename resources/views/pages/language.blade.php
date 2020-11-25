@@ -99,7 +99,7 @@
               <p>پشتیبانی از راست به چپ</p>
             </a>
           </li>
-           <li class="nav-item active-pro ">
+            <li class="nav-item active-pro ">
                 <a class="nav-link" href="{{ route('upgrade') }}">
                     <i class="material-icons">unarchive</i>
                     <p>Upgrade to PRO</p>
