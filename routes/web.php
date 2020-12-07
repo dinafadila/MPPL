@@ -37,4 +37,11 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('calendar', function () {
 		return view('pages.calendar');
 	})->name('calendar');
+
+	Route::get('/', function () {
+		return view('welcome');
+	})->name('admin');
+
 });
+
+Route::get('/admin', 'App\Http\Controllers\AdminController@index')->name('admin')->middleware('auth');
