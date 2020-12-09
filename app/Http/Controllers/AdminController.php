@@ -30,5 +30,15 @@ class AdminController extends Controller
     {
         return view('admin.students');
     }
+
+    public function editprofile()
+    {
+        return view('admin.editprofile');
+    }
+
+    public function ad_calendar()
+    {
+        return view('admin.ad_calendar');
+    }
     
 }

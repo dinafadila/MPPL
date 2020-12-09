@@ -21,6 +21,8 @@ Auth::routes();
 Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home')->middleware('auth');
 Route::get('/admin', 'App\Http\Controllers\AdminController@index')->name('admin')->middleware('auth');
 Route::get('admin/students', 'App\Http\Controllers\AdminController@students')->name('students')->middleware('auth');
+Route::get('admin/students/editprofile', 'App\Http\Controllers\AdminController@editprofile')->name('editprofile')->middleware('auth');
+Route::get('admin/ad_calendar', 'App\Http\Controllers\AdminController@ad_calendar')->name('ad_calendar')->middleware('auth');
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
@@ -47,5 +49,13 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('admin/students', function () {
 		return view('admin.students');
 	})->name('students');
+
+	Route::get('admin/students/editprofile', function () {
+		return view('admin.editprofile');
+	})->name('editprofile');
+
+	Route::get('admin/ad_calendar', function () {
+		return view('admin.ad_calendar');
+	})->name('ad_calendar');
 
 });
