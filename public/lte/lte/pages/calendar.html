@@ -422,7 +422,7 @@
             <a href="calendar.html" class="nav-link active">
               <i class="nav-icon far fa-calendar-alt"></i>
               <p>
-                Calendar
+                Kalender
                 <span class="badge badge-info right">2</span>
               </p>
             </a>
@@ -711,12 +711,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Calendar</h1>
+           <h1>Kalender Akademik</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Calendar</li>
+              <!--<li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Calendar</li>-->
             </ol>
           </div>
         </div>
@@ -731,20 +731,20 @@
             <div class="sticky-top mb-3">
               <div class="card">
                 <div class="card-header">
-                  <h4 class="card-title">Draggable Events</h4>
+                  <h4 class="card-title">Drag Kegiatan</h4>
                 </div>
                 <div class="card-body">
                   <!-- the events -->
-                  <div id="external-events">
-                    <div class="external-event bg-success">Lunch</div>
-                    <div class="external-event bg-warning">Go home</div>
-                    <div class="external-event bg-info">Do homework</div>
-                    <div class="external-event bg-primary">Work on UI design</div>
-                    <div class="external-event bg-danger">Sleep tight</div>
-                    <div class="checkbox">
+                    <div id="external-events">
+                    <div class="external-event bg-success">Libur Semester Genap</div>
+                    <div class="external-event bg-warning">Libur Semester Ganjil</div>
+                    <div class="external-event bg-info">Hari Raya Idul Fitri</div>
+                    <div class="external-event bg-primary">Penerimaan Peserta Didik Baru</div>
+                    <div class="external-event bg-danger">Penilaian Tengah Semester</div>
+                    <p><div class="checkbox"></p>
                       <label for="drop-remove">
                         <input type="checkbox" id="drop-remove">
-                        remove after drop
+                        hapus setelah didrag
                       </label>
                     </div>
                   </div>
@@ -754,7 +754,7 @@
               <!-- /.card -->
               <div class="card">
                 <div class="card-header">
-                  <h3 class="card-title">Create Event</h3>
+                  <h3 class="card-title">Tambahkan Kegiatan</h3>
                 </div>
                 <div class="card-body">
                   <div class="btn-group" style="width: 100%; margin-bottom: 10px;">
@@ -765,14 +765,18 @@
                       <li><a class="text-success" href="#"><i class="fas fa-square"></i></a></li>
                       <li><a class="text-danger" href="#"><i class="fas fa-square"></i></a></li>
                       <li><a class="text-muted" href="#"><i class="fas fa-square"></i></a></li>
+                      <li><a class="text-dark" href="#"><i class="fas fa-square"></i></a></li>
+                      <li><a class="text-secondary" href="#"><i class="fas fa-square"></i></a></li>
+                      <li><a class="text-info" href="#"><i class="fas fa-square"></i></a></li>
+                      
                     </ul>
                   </div>
                   <!-- /btn-group -->
                   <div class="input-group">
-                    <input id="new-event" type="text" class="form-control" placeholder="Event Title">
+                    <input id="new-event" type="text" class="form-control" placeholder="Nama Kegiatan">
 
                     <div class="input-group-append">
-                      <button id="add-new-event" type="button" class="btn btn-primary">Add</button>
+                      <button id="add-new-event" type="button" class="btn btn-primary">Tambah</button>
                     </div>
                     <!-- /btn-group -->
                   </div>
@@ -801,13 +805,7 @@
   </div>
   <!-- /.content-wrapper -->
 
-  <footer class="main-footer">
-    <div class="float-right d-none d-sm-block">
-      <b>Version</b> 3.0.5
-    </div>
-    <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong> All rights
-    reserved.
-  </footer>
+  
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
@@ -904,7 +902,7 @@
       },
       'themeSystem': 'bootstrap',
       //Random default events
-      events    : [
+      /*events    : [
         {
           title          : 'All Day Event',
           start          : new Date(y, m, 1),
@@ -950,7 +948,7 @@
           backgroundColor: '#3c8dbc', //Primary (light-blue)
           borderColor    : '#3c8dbc' //Primary (light-blue)
         }
-      ],
+      ],*/
       editable  : true,
       droppable : true, // this allows things to be dropped onto the calendar !!!
       drop      : function(info) {
