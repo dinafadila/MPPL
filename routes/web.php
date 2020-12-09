@@ -19,6 +19,8 @@ Route::get('/', function () {
 
 Auth::routes();
 Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home')->middleware('auth');
+Route::get('/admin', 'App\Http\Controllers\AdminController@index')->name('admin')->middleware('auth');
+Route::get('admin/students', 'App\Http\Controllers\AdminController@students')->name('students')->middleware('auth');
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
@@ -42,6 +44,8 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('welcome');
 	})->name('admin');
 
-});
+	Route::get('admin/students', function () {
+		return view('admin.students');
+	})->name('students');
 
-Route::get('/admin', 'App\Http\Controllers\AdminController@index')->name('admin')->middleware('auth');
+});

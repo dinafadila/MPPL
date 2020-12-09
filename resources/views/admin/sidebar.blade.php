@@ -53,6 +53,14 @@
             </ul>
           </li>
           <li class="nav-item">
+            <a href="{{ route('students') }}" class="nav-link">
+            <i class="nav-icon fas fa-user-friends"></i>
+              <p>
+                Data Siswa/i
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="{{ ('lte/lte/pages/widgets.html') }}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
