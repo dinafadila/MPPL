@@ -63,4 +63,12 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('admin.dashboard');
 	})->name('dashboard');
 
+	Route::get('admin/sppadmin', function () {
+		return view('admin.sppadmin');
+	})->name('sppadmin');
+
+	Route::get('admin/editspp', function () {
+		return view('admin.editspp');
+	})->name('editspp');
+
 });

@@ -23,23 +23,34 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="{{ route('admin') }}" class="nav-link">
+            <a href="{{ route('admin') }}" <?php if($thisPage == "admin") echo "class='nav-link active'"; ?> class='nav-link'>
             <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Beranda
               </p>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="{{ route('students') }}" class="nav-link">
+          <li class="nav-item" >
+          <a href="{{ route('students') }}" <?php if($thisPage == "students") echo "class='nav-link active'"; ?> class='nav-link'>
             <i class="nav-icon fas fa-user-friends"></i>
               <p>
                 Data Siswa/i
               </p>
             </a>
           </li>
+
           <li class="nav-item">
-            <a href="{{ route('ad_calendar') }}" class="nav-link">
+            <a href="{{ route('sppadmin') }}" <?php if($thisPage == "sppadmin") echo "class='nav-link active'"; ?> class='nav-link'>
+            <i class="nav-icon fas fa-money-check-alt"></i>
+              <p>
+                Data SPP Siswa/i
+              </p>
+            </a>
+          </li>
+
+
+          <li class="nav-item">
+            <a href="{{ route('ad_calendar') }}" <?php if($thisPage == "ad_calendar") echo "class='nav-link active'"; ?> class='nav-link'>
             <i class="nav-icon far fa-calendar-alt"></i>
               <p>
                 Kalender Akademik

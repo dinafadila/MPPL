@@ -1,3 +1,4 @@
+<?php $thisPage="students"; ?>
 <!DOCTYPE html>
 <html>
 <head>

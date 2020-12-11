@@ -1,3 +1,4 @@
+<?php $thisPage="ad_calendar"; ?>
 <!DOCTYPE html>
 <html>
 <head>
