@@ -84,7 +84,6 @@
               <div class="card">
                 <div class="card-header p-2">
                   <ul class="nav nav-pills">
-                    <li class="nav-item"><a class="nav-link active" href="#fee" data-toggle="tab">SPP dan Uang Pangkal</a></li>
                     <li class="nav-item"><a class="nav-link" href="#report" data-toggle="tab">Rapot Anak</a></li>
                     <li class="nav-item"><a class="nav-link" href="#biodata" data-toggle="tab">Biodata</a></li>
                   </ul>
