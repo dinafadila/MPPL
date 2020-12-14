@@ -56,270 +56,222 @@
         <div class="row">
           <div class="col-12">
           <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Data SPP Semester Ganjil</h3>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-                <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap4"><div class="row"><div class="col-sm-12 col-md-6"></div><div class="col-sm-12 col-md-6"></div></div><div class="row"><div class="col-sm-12"><table id="example2" class="table table-bordered table-hover dataTable dtr-inline collapsed" role="grid" aria-describedby="example2_info">
-                  <thead>
-                  <tr role="row">
-                  <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">Nama</th>
-                  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Nama: activate to sort column ascending">Juli</th>
-                  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Agustus: activate to sort column ascending">Agustus</th>
-                  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="September: activate to sort column ascending">September</th>
-                  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Oktober: activate to sort column ascending" >Oktober</th>
-                  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="September: activate to sort column ascending">November</th>
-                  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Oktober: activate to sort column ascending" >Desember</th>
-                  <th style="width: 15%"> Pengaturan </th>
-                </tr>
-                  </thead>
-                  <tbody>
-                  <tr role="row" class="odd">
-                    <td tabindex="0" class="sorting_1">Fulan</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td class="project-actions text-right">
-                          <a class="btn btn-info btn-sm" href="{{ route('editspp') }}">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
-                          </a>
-                      </td>
-                    <td style="display: none;">A</td>
-                  </tr><tr role="row" class="even">
-                  <td tabindex="0" class="sorting_1">Fulan</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td class="project-actions text-right">
-                          <a class="btn btn-info btn-sm" href="{{ route('editspp') }}">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
-                          </a>
-                      </td>
-                    <td style="display: none;">A</td>
-                  </tr><tr role="row" class="odd">
-                  <td tabindex="0" class="sorting_1">Fulan</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td class="project-actions text-right">
-                          <a class="btn btn-info btn-sm" href="{{ route('editspp') }}">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
-                          </a>
-                      </td>
-                    <td style="display: none;">A</td>
-                  </tr><tr role="row" class="even">
-                  <td tabindex="0" class="sorting_1">Fulan</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td class="project-actions text-right">
-                          <a class="btn btn-info btn-sm" href="{{ route('editspp') }}">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
-                          </a>
-                      </td>
-                    <td style="display: none;">A</td>
-                  </tr><tr role="row" class="odd">
-                  <td tabindex="0" class="sorting_1">Fulan</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td class="project-actions text-right">
-                          <a class="btn btn-info btn-sm" href="{{ route('editspp') }}">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
-                          </a>
-                      </td>
-                    <td style="display: none;">A</td>
-                  </tr></tbody>
-                  
+          <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Data SPP Semester Ganjil</h3>
+          <div class="card-body">
+            <div id="table" class="table-editable">
+              <span class="table-add float-right mb-3 mr-2"><a href="#!" class="text-success"><i
+                    class="fas fa-plus fa-2x" aria-hidden="true"></i></a></span>
+              <table class="table table-bordered table-responsive-md table-striped text-center">
+                <thead>
+                  <tr>
+                    <th class="text-center">Nama Siswa</th>
+                    <th class="text-center">Juli</th>
+                    <th class="text-center">Agustus</th>
+                    <th class="text-center">September</th>
+                    <th class="text-center">Oktober</th>
+                    <th class="text-center">November</th>
+                    <th class="text-center">Desember</th>
+                    <th class="text-center">Sort</th>
+                    <th class="text-center">Remove</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="pt-3-half" contenteditable="true">Aurelia Vega</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half">
+                      <span class="table-up"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-up"
+                            aria-hidden="true"></i></a></span>
+                      <span class="table-down"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-down"
+                            aria-hidden="true"></i></a></span>
+                    </td>
+                    <td>
+                      <span class="table-remove"><button type="button"
+                          class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
+                    </td>
+                  </tr>
+                  <!-- This is our clonable table line -->
+                  <tr>
+                    <td class="pt-3-half" contenteditable="true">Guerra Cortez</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half">
+                      <span class="table-up"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-up"
+                            aria-hidden="true"></i></a></span>
+                      <span class="table-down"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-down"
+                            aria-hidden="true"></i></a></span>
+                    </td>
+                    <td>
+                      <span class="table-remove"><button type="button"
+                          class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
+                    </td>
+                  </tr>
+                  <!-- This is our clonable table line -->
+                  <tr>
+                    <td class="pt-3-half" contenteditable="true">Guadalupe House</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half">
+                      <span class="table-up"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-up"
+                            aria-hidden="true"></i></a></span>
+                      <span class="table-down"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-down"
+                            aria-hidden="true"></i></a></span>
+                    </td>
+                    <td>
+                      <span class="table-remove"><button type="button"
+                          class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
+                    </td>
+                  </tr>
+                  <!-- This is our clonable table line -->
+                  <tr class="hide">
+                    <td class="pt-3-half" contenteditable="true">Elisa Gallagher</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half">
+                      <span class="table-up"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-up"
+                            aria-hidden="true"></i></a></span>
+                      <span class="table-down"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-down"
+                            aria-hidden="true"></i></a></span>
+                    </td>
+                    <td>
+                      <span class="table-remove"><button type="button"
+                          class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
+                    </td>
+                  </tr>
+                </tbody>
                 </table></div></div><div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="example2_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="example2_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="example2_previous"><a href="#" aria-controls="example2" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="#" aria-controls="example2" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example2" data-dt-idx="2" tabindex="0" class="page-link">2</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example2" data-dt-idx="3" tabindex="0" class="page-link">3</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example2" data-dt-idx="4" tabindex="0" class="page-link">4</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example2" data-dt-idx="5" tabindex="0" class="page-link">5</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example2" data-dt-idx="6" tabindex="0" class="page-link">6</a></li><li class="paginate_button page-item next" id="example2_next"><a href="#" aria-controls="example2" data-dt-idx="7" tabindex="0" class="page-link">Next</a></li></ul></div></div></div></div>
+              </table>
               </div>
-              <!-- /.card-body -->
             </div>
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-            
-            <!-- /.card -->
-          </div>
-          <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Data SPP Semester Genap</h3>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-                <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap4"><div class="row"><div class="col-sm-12 col-md-6"></div><div class="col-sm-12 col-md-6"></div></div><div class="row"><div class="col-sm-12"><table id="example2" class="table table-bordered table-hover dataTable dtr-inline collapsed" role="grid" aria-describedby="example2_info">
-                  <thead>
-                  <tr role="row">
-                  <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">Nama</th>
-                  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Nama: activate to sort column ascending">Januari</th>
-                  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Agustus: activate to sort column ascending">Februari</th>
-                  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="September: activate to sort column ascending">Maret</th>
-                  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Oktober: activate to sort column ascending" >April</th>
-                  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="September: activate to sort column ascending">Mei</th>
-                  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Oktober: activate to sort column ascending" >Juni</th>
-                  <th style="width: 15%"> Pengaturan </th>
-                </tr>
-                  </thead>
-                  <tbody>
-                  <tr role="row" class="odd">
-                    <td tabindex="0" class="sorting_1">Fulan</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td class="project-actions text-right">
-                          <a class="btn btn-info btn-sm" href="{{ route('editspp') }}">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
-                          </a>
-                      </td>
-                    <td style="display: none;">A</td>
-                  </tr><tr role="row" class="even">
-                  <td tabindex="0" class="sorting_1">Fulan</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td class="project-actions text-right">
-                          <a class="btn btn-info btn-sm" href="{{ route('editspp') }}">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
-                          </a>
-                      </td>
-                    <td style="display: none;">A</td>
-                  </tr><tr role="row" class="odd">
-                  <td tabindex="0" class="sorting_1">Fulan</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td class="project-actions text-right">
-                          <a class="btn btn-info btn-sm" href="{{ route('editspp') }}">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
-                          </a>
-                      </td>
-                    <td style="display: none;">A</td>
-                  </tr><tr role="row" class="even">
-                  <td tabindex="0" class="sorting_1">Fulan</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td class="project-actions text-right">
-                          <a class="btn btn-info btn-sm" href="{{ route('editspp') }}">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
-                          </a>
-                      </td>
-                    <td style="display: none;">A</td>
-                  </tr><tr role="row" class="odd">
-                  <td tabindex="0" class="sorting_1">Fulan</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td>100.000</td>
-                    <td class="project-actions text-right">
-                          <a class="btn btn-info btn-sm" href="{{ route('editspp') }}">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
-                          </a>
-                      </td>
-                    <td style="display: none;">A</td>
-                  </tr></tbody>
-                  
+
+            <div class="card">
+          <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Data SPP Semester Genap</h3>
+          <div class="card-body">
+            <div id="table" class="table-editable">
+              <span class="table-add float-right mb-3 mr-2"><a href="#!" class="text-success"><i
+                    class="fas fa-plus fa-2x" aria-hidden="true"></i></a></span>
+              <table class="table table-bordered table-responsive-md table-striped text-center">
+                <thead>
+                  <tr>
+                    <th class="text-center">Nama Siswa</th>
+                    <th class="text-center">Januari</th>
+                    <th class="text-center">Februari</th>
+                    <th class="text-center">Maret</th>
+                    <th class="text-center">April</th>
+                    <th class="text-center">Mei</th>
+                    <th class="text-center">Juni</th>
+                    <th class="text-center">Sort</th>
+                    <th class="text-center">Remove</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="pt-3-half" contenteditable="true">Aurelia Vega</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half">
+                      <span class="table-up"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-up"
+                            aria-hidden="true"></i></a></span>
+                      <span class="table-down"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-down"
+                            aria-hidden="true"></i></a></span>
+                    </td>
+                    <td>
+                      <span class="table-remove"><button type="button"
+                          class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
+                    </td>
+                  </tr>
+                  <!-- This is our clonable table line -->
+                  <tr>
+                    <td class="pt-3-half" contenteditable="true">Guerra Cortez</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half">
+                      <span class="table-up"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-up"
+                            aria-hidden="true"></i></a></span>
+                      <span class="table-down"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-down"
+                            aria-hidden="true"></i></a></span>
+                    </td>
+                    <td>
+                      <span class="table-remove"><button type="button"
+                          class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
+                    </td>
+                  </tr>
+                  <!-- This is our clonable table line -->
+                  <tr>
+                    <td class="pt-3-half" contenteditable="true">Guadalupe House</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half">
+                      <span class="table-up"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-up"
+                            aria-hidden="true"></i></a></span>
+                      <span class="table-down"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-down"
+                            aria-hidden="true"></i></a></span>
+                    </td>
+                    <td>
+                      <span class="table-remove"><button type="button"
+                          class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
+                    </td>
+                  </tr>
+                  <!-- This is our clonable table line -->
+                  <tr class="hide">
+                    <td class="pt-3-half" contenteditable="true">Elisa Gallagher</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half" contenteditable="true">100.000</td>
+                    <td class="pt-3-half">
+                      <span class="table-up"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-up"
+                            aria-hidden="true"></i></a></span>
+                      <span class="table-down"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-down"
+                            aria-hidden="true"></i></a></span>
+                    </td>
+                    <td>
+                      <span class="table-remove"><button type="button"
+                          class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
+                    </td>
+                  </tr>
+                </tbody>
                 </table></div></div><div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="example2_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="example2_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="example2_previous"><a href="#" aria-controls="example2" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="#" aria-controls="example2" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example2" data-dt-idx="2" tabindex="0" class="page-link">2</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example2" data-dt-idx="3" tabindex="0" class="page-link">3</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example2" data-dt-idx="4" tabindex="0" class="page-link">4</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example2" data-dt-idx="5" tabindex="0" class="page-link">5</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example2" data-dt-idx="6" tabindex="0" class="page-link">6</a></li><li class="paginate_button page-item next" id="example2_next"><a href="#" aria-controls="example2" data-dt-idx="7" tabindex="0" class="page-link">Next</a></li></ul></div></div></div></div>
+              </table>
+              </div>
+            </div>
+      </div>
+    </div>
+</div>
+
+
+          
               </div>
               <!-- /.card-body -->
             </div>
