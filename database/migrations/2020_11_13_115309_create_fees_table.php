@@ -16,16 +16,18 @@ class CreateFeesTable extends Migration
         Schema::create('fees', function (Blueprint $table) {
             $table->id();
             $table->foreignId('student_id');
-            $table->enum('month', [
-                'Januari', 'Februari', 'Maret',
-                'April', 'Mei', 'Juni',
-                'Juli', 'Agustus', 'September',
-                'Oktober', 'November', 'Desember'
-            ]);
-            $table->date('date_of_payment');
-            $table->integer('school_fee')->nullable();
-            $table->integer('entrance_fee')->nullable();
-            $table->enum('status', ['Lunas', 'Belum Lunas']);
+            $table->integer('july');
+            $table->integer('august');
+            $table->integer('september');
+            $table->integer('october');
+            $table->integer('november');
+            $table->integer('december');
+            $table->integer('january');
+            $table->integer('february');
+            $table->integer('march');
+            $table->integer('april');
+            $table->integer('may');
+            $table->integer('june');
             $table->timestamps();
         });
     }

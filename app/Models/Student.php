@@ -42,7 +42,7 @@ class Student extends Model
             'mother_name' => 'required|string|min:3|max:50',
         ],
         'update' => [
-            'user_id' => 'user_id',
+            'user_id' => 'nullable|numeric',
             'name' => 'nullable|string|min:3|max:50',
             'gender' => 'nullable|string|in:Laki-laki,Perempuan',
             'place_of_birth' => 'nullable|string|min:3|max:20',

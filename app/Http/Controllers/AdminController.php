@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Student;
 
 class AdminController extends Controller
 {
@@ -26,9 +27,13 @@ class AdminController extends Controller
         return view('admin.admin');
     }
 
-    public function students()
+    public function indexStudents()
     {
-        return view('admin.students');
+        $students = Student::all();
+        if ($students == NULL) {
+            $students = [];
+        }
+        return view('admin.students', compact('students'));
     }
 
     public function editprofile()

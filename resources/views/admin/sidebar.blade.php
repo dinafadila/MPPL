@@ -31,7 +31,7 @@
             </a>
           </li>
           <li class="nav-item" >
-          <a href="{{ route('students') }}" <?php if($thisPage == "students") echo "class='nav-link active'"; ?> class='nav-link'>
+          <a href="{{ route('student.index') }}" <?php if($thisPage == "students") echo "class='nav-link active'"; ?> class='nav-link'>
             <i class="nav-icon fas fa-user-friends"></i>
               <p>
                 Data Siswa/i
@@ -40,7 +40,16 @@
           </li>
 
           <li class="nav-item">
-            <a href="{{ route('sppadmin') }}" <?php if($thisPage == "sppadmin") echo "class='nav-link active'"; ?> class='nav-link'>
+            <a href="{{ route('report.index') }}" <?php if($thisPage == "reports") echo "class='nav-link active'"; ?> class='nav-link'>
+            <i class="nav-icon fas fa-book-open"></i>
+              <p>
+                Data Rapot Siswa/i
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="{{ route('fee.index') }}" <?php if($thisPage == "fees") echo "class='nav-link active'"; ?> class='nav-link'>
             <i class="nav-icon fas fa-money-check-alt"></i>
               <p>
                 Data SPP Siswa/i
@@ -48,9 +57,8 @@
             </a>
           </li>
 
-
           <li class="nav-item">
-            <a href="{{ route('adcalendar') }}" <?php if($thisPage == "adcalendar") echo "class='nav-link active'"; ?> class='nav-link'>
+            <a href="{{ route('calendar.index') }}" <?php if($thisPage == "calendars") echo "class='nav-link active'"; ?> class='nav-link'>
             <i class="nav-icon far fa-calendar-alt"></i>
               <p>
                 Kalender Akademik

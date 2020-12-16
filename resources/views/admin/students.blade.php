@@ -53,14 +53,7 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Data Siswa/i</h3>
-
-          <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-              <i class="fas fa-minus"></i></button>
-            <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
-              <i class="fas fa-times"></i></button>
-          </div>
+          <h3 class="card-title">Data Siswa</h3>
         </div>
         <div class="card-body p-0">
           <table class="table table-striped projects">
@@ -70,60 +63,54 @@
                           No.
                       </th>
                       <th style="width: 5%">
-                          Nomer Induk Siswa
+                          Nama Siswa
                       </th>
                       <th style="width: 5%">
-                          Nama Siswa/i
+                          Jenis Kelamin
                       </th>
                       <th style="width: 5%">
-                          Periode
+                          Nama Ayah
                       </th>
                       <th style="width: 5%">
-                          Nama Orang Tua
+                          Nama Ibu
                       </th>
                       <th style="width: 5%">
+                          No. Telepon
+                      </th>
+                      <th style="width: 8%">
                           Alamat
-                      </th>
-                      <th style="width: 8%" class="text-center">
-                          Status
                       </th>
                       <th style="width: 5%">
                           Pengaturan
                       </th>
                   </tr>
               </thead>
+              @php
+                $idx = 1;
+              @endphp
               <tbody>
+                @foreach ($students as $student)
                   <tr>
                       <td>
-                          1
+                        {{ $idx++ }}
                       </td>
                       <td>
-                          <a>
-                              G64170091
-                          </a>
+                        {{ $student->name }}
                       </td>
                       <td>
-                          <a>
-                              Intan Aida Rahmani
-                          </a>
+                        {{ $student->gender }}
                       </td>
                       <td>
-                          <a>
-                              2017-2020
-                          </a>
+                        {{ $student->father_name }}
                       </td>
                       <td>
-                          <a>
-                              Sundaru
-                          </a>
+                        {{ $student->mother_name }}
                       </td>
                       <td>
-                          <a>
-                              Tangerang Selatan
-                          </a>
+                        {{ $student->address }}
                       </td>
-                      <td class="project-state">
-                          <span class="badge badge-success">Success</span>
+                      <td>
+                        {{ $student->phone }}
                       </td>
                       <td class="project-actions text-right">
                           <a class="btn btn-info btn-sm" href="{{ route('editprofile') }}">
@@ -131,13 +118,14 @@
                               </i>
                               Edit
                           </a>
-                          <a class="btn btn-danger btn-sm" href="#">
+                          <a class="btn btn-danger btn-sm" href="{{ route('deleteprofile') }}">
                               <i class="fas fa-trash">
                               </i>
                               Delete
                           </a>
                       </td>
                   </tr>
+                @endforeach
               </tbody>
           </table>
         </div>

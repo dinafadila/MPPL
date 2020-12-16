@@ -28,21 +28,25 @@
                   </th>
                 </thead>
                 <tbody>
+                  @php
+                    $idx = 1;
+                  @endphp
+                  @foreach ($calendars as $calendar) 
                   <tr>
                     <td>
-                      1
+                      {{ $idx++ }}
                     </td>
                     <td>
-                      Hari Libur Nasional
+                      {{ $calendar->name_of_event }}
                     </td>
                     <td>
-                      10-07-2020
+                      {{ $calendar->start_date }}
                     </td>
                     <td>
-                      13-07-2020
+                      {{ $calendar->end_date }}
                     </td>
-                    
                   </tr>
+                  @endforeach
                 </tbody>
               </table>
             </div>

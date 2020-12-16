@@ -36,12 +36,6 @@ Route::group(['prefix' => 'fee'], function () {
     Route::put('/{id}', ['uses' => 'App\Http\Controllers\FeeController@update']);
     Route::delete('/{id}', ['uses' => 'App\Http\Controllers\FeeController@destroy']);
 });
-Route::group(['prefix' => 'saving'], function () {
-    Route::post('/', ['uses' => 'App\Http\Controllers\SavingController@create']);
-    Route::get('/', ['uses' => 'App\Http\Controllers\SavingController@index']);
-    Route::put('/{id}', ['uses' => 'App\Http\Controllers\SavingController@update']);
-    Route::delete('/{id}', ['uses' => 'App\Http\Controllers\SavingController@destroy']);
-});
 Route::group(['prefix' => 'report'], function () {
     Route::post('/', ['uses' => 'App\Http\Controllers\ReportController@create']);
     Route::get('/', ['uses' => 'App\Http\Controllers\ReportController@index']);

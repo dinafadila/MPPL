@@ -14,21 +14,24 @@ class Calendar extends Model
     public $incrementing = true;
     protected $attributes = [];
     protected $fillable = [
-        'date_of_event',
         'name_of_event',
+        'date_of_start',
+        'date_of_end',
         'information',
     ];
     protected $hidden = [];
     public static $rules = [
         'create' => [
-            'date_of_event' => 'required|date',
             'name_of_event' => 'required|string|min:3|max:30',
-            'information' => 'required|string|min:3|max:100',
+            'date_of_start' => 'required|date',
+            'date_of_end' => 'required|date',
+            'information' => 'required|string',
         ],
         'update' => [
-            'date_of_event' => 'nullable|date',
             'name_of_event' => 'nullable|string|min:3|max:30',
-            'information' => 'nullable|string|min:3|max:100',
+            'date_of_start' => 'nullable|date',
+            'date_of_end' => 'nullable|date',
+            'information' => 'nullable|string',
         ],
     ];
 }

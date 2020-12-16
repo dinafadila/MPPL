@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Calendar;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use App\Models\Calendar;
 
 class CalendarController extends Controller
 {
@@ -16,7 +16,7 @@ class CalendarController extends Controller
     public function index()
     {
         $calendars = Calendar::all();
-        return $this->responseHandler(['calendars' => $calendars], 200, 'Berhasil memperoleh seluruh kalender akademik');
+        return view('admin.calendar.index', compact('calendars'));
     }
 
     /**
@@ -24,17 +24,9 @@ class CalendarController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
-        $validator = Validator::make($request->all(), Calendar::$rules['create']);
-
-        if ($validator->fails()){
-            return response()->json($validator->messages(), 200);
-        }
-
-        $calendar = Calendar::create($request->all());
-
-        return $this->responseHandler(['calendar' => $calendar], 201, 'Berhasil membuat kalender akademik baru');
+        return view('admin.calendar.create');
     }
 
     /**
@@ -45,7 +37,19 @@ class CalendarController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'name_of_event' => 'required|string|min:3|max:30',
+            'date_of_start' => 'required|date',
+            'date_of_end' => 'required|date',
+            'information' => 'required|string',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->route('calendar.create')->withErrors($validator)->withInput();
+        }
+
+        Calendar::create($request->all());
+        return redirect()->route('calendar.index')->with('success','Calendar created successfully.');
     }
 
     /**
@@ -54,9 +58,9 @@ class CalendarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Calendar $calendar)
     {
-        //
+        return view('admin.calendar.show',compact('calendar'));
     }
 
     /**
@@ -65,9 +69,9 @@ class CalendarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Calendar $calendar)
     {
-        //
+        return view('admin.calendar.edit',compact('calendar'));
     }
 
     /**
@@ -77,23 +81,20 @@ class CalendarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id = null)
+    public function update(Request $request, Calendar $calendar)
     {
-        $validator = Validator::make($request->all(), Calendar::$rules['update']);
+        $validator = Validator::make($request->all(), [
+            'name_of_event' => 'nullable|string|min:3|max:30',
+            'start_date' => 'nullable|date',
+            'end_date' => 'nullable|date',
+        ]);
 
-        if ($validator->fails()){
-            return response()->json($validator->messages(), 200);
+        if ($validator->fails()) {
+            return redirect()->route('calendar.edit', $calendar->id)->withErrors($validator)->withInput();
         }
 
-        $calendar = Calendar::find($id);
-
-        if (!$calendar) {
-            return $this->responseHandler(null, 404, 'Tidak ada kalender akademik dengan id:' . $id);
-        }
-
-        $calendar->fill($request->all())->save();
-
-        return $this->responseHandler(['calendar' => $calendar], 201, 'Data kalender akademik berhasil di update');
+        $calendar->update($request->all());
+        return redirect()->route('calendar.index')->with('success','Calendar updated successfully.');
     }
 
     /**
@@ -102,16 +103,9 @@ class CalendarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request, $id = null)
+    public function destroy(Calendar $calendar)
     {
-        $calendar = Calendar::find($id);
-
-        if (!$calendar) {
-            return $this->responseHandler(null, 404, 'Tidak ada kalender akademik dengan id:' . $id);
-        }
-
         $calendar->delete();
-
-        return $this->responseHandler(['id' => $id], 200, 'Berhasil menghapus kalender akademik');
+        return redirect()->route('calendar.index')->with('success','Calendar deleted successfully');
     }
 }

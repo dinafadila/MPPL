@@ -15,8 +15,8 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $student = Student::where('user_id', auth()->user()->id)->first();
-        return view('pages.biodata', compact('student'));
+        $students = Student::all();
+        return view('admin.student.index', compact('students'));
     }
 
     /**
@@ -24,17 +24,9 @@ class StudentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
-        $validator = Validator::make($request->all(), Student::$rules['create']);
-
-        if ($validator->fails()){
-            return response()->json($validator->messages(), 200);
-        }
-
-        $student = Student::create($request->all());
-
-        return $this->responseHandler(['student' => $student], 201, 'Berhasil membuat siswa baru');
+        return view('admin.student.create');
     }
 
     /**
@@ -45,7 +37,26 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'user_id' => 'required|numeric',
+            'name' => 'required|string|min:3|max:50',
+            'gender' => 'required|string|in:Laki-laki,Perempuan',
+            'place_of_birth' => 'required|string|min:3|max:20',
+            'date_of_birth' => 'required|date',
+            'religion' => 'required|string|min:3|max:20',
+            'date_of_entry' => 'required|date',
+            'address' => 'required|string|min:3|max:1000',
+            'phone' => 'required|numeric',
+            'father_name' => 'required|string|min:3|max:50',
+            'mother_name' => 'required|string|min:3|max:50',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->route('student.create')->withErrors($validator)->withInput();
+        }
+
+        Student::create($request->all());
+        return redirect()->route('student.index')->with('success','Student created successfully.');
     }
 
     /**
@@ -54,9 +65,9 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Student $student)
     {
-        //
+        return view('admin.student.show',compact('student'));
     }
 
     /**
@@ -65,9 +76,9 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Student $student)
     {
-        //
+        return view('admin.student.edit',compact('student'));
     }
 
     /**
@@ -77,23 +88,28 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id = null)
+    public function update(Request $request, Student $student)
     {
-        $validator = Validator::make($request->all(), Student::$rules['update']);
+        $validator = Validator::make($request->all(), [
+            'user_id' => 'nullable|numeric',
+            'name' => 'nullable|string|min:3|max:50',
+            'gender' => 'nullable|string|in:Laki-laki,Perempuan',
+            'place_of_birth' => 'nullable|string|min:3|max:20',
+            'date_of_birth' => 'nullable|date',
+            'religion' => 'nullable|string|min:3|max:20',
+            'date_of_entry' => 'nullable|date',
+            'address' => 'nullable|string|min:3|max:1000',
+            'phone' => 'nullable|numeric',
+            'father_name' => 'nullable|string|min:3|max:50',
+            'mother_name' => 'nullable|string|min:3|max:50',
+        ]);
 
-        if ($validator->fails()){
-            return response()->json($validator->messages(), 200);
+        if ($validator->fails()) {
+            return redirect()->route('student.edit', $student->id)->withErrors($validator)->withInput();
         }
 
-        $student = Student::find($id);
-
-        if (!$student) {
-            return $this->responseHandler(null, 404, 'Tidak ada siswa dengan id:' . $id);
-        }
-
-        $student->fill($request->all())->save();
-
-        return $this->responseHandler(['student' => $student], 201, 'Data siswa berhasil di update');
+        $student->update($request->all());
+        return redirect()->route('student.index')->with('success','Student updated successfully.');
     }
 
     /**
@@ -102,16 +118,9 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request, $id = null)
+    public function destroy(Student $student)
     {
-        $student = Student::find($id);
-
-        if (!$student) {
-            return $this->responseHandler(null, 404, 'Tidak ada siswa dengan id:' . $id);
-        }
-
         $student->delete();
-
-        return $this->responseHandler(['id' => $id], 200, 'Berhasil menghapus siswa');
+        return redirect()->route('student.index')->with('success','Student deleted successfully');
     }
 }

@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Report;
-use App\Models\Student;
 
 class ReportController extends Controller
 {
@@ -16,9 +15,8 @@ class ReportController extends Controller
      */
     public function index()
     {
-        $student = Student::where('user_id', auth()->user()->id)->first();
-        $report = Report::where('student_id', $student->id)->first();
-        return view('pages.report', compact('report'));
+        $reports = Report::all();
+        return view('admin.report.index', compact('reports'));
     }
 
     /**
@@ -26,17 +24,9 @@ class ReportController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
-        $validator = Validator::make($request->all(), Report::$rules['create']);
-
-        if ($validator->fails()){
-            return response()->json($validator->messages(), 200);
-        }
-
-        $report = Report::create($request->all());
-
-        return $this->responseHandler(['report' => $report], 201, 'Berhasil membuat rapor baru');
+        return view('admin.report.create');
     }
 
     /**
@@ -47,7 +37,33 @@ class ReportController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'student_id' => 'required|numeric',
+            'group' => 'required|string|min:1|max:3',
+            'semester' => 'required|numeric',
+            'school_year' => 'required|string',
+            'religion_and_moral' => 'required|string',
+            'social_emotional_and_autonomy' => 'required|string',
+            'language' => 'required|string',
+            'cognitive' => 'required|string',
+            'physical' => 'required|string',
+            'art' => 'required|string',
+            'extracurricular' => 'required|string|min:3|max:20',
+            'grade_of_extracurricular' => 'required|string|in:A,B,C,K',
+            'description' => 'required|string',
+            'sick' => 'required|numeric',
+            'permit' => 'required|numeric',
+            'absent' => 'required|numeric',
+            'note_for_parents' => 'required|string',
+            'date_of_report' => 'required|date',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->route('report.create')->withErrors($validator)->withInput();
+        }
+
+        Report::create($request->all());
+        return redirect()->route('report.index')->with('success','Report created successfully.');
     }
 
     /**
@@ -56,9 +72,9 @@ class ReportController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Report $report)
     {
-        //
+        return view('admin.report.show',compact('report'));
     }
 
     /**
@@ -67,9 +83,9 @@ class ReportController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Report $report)
     {
-        //
+        return view('admin.report.edit',compact('report'));
     }
 
     /**
@@ -79,23 +95,35 @@ class ReportController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id = null)
+    public function update(Request $request, Report $report)
     {
-        $validator = Validator::make($request->all(), Report::$rules['update']);
+        $validator = Validator::make($request->all(), [
+            'student_id' => 'nullable|numeric',
+            'group' => 'nullable|string|min:1|max:3',
+            'semester' => 'nullable|numeric',
+            'school_year' => 'nullable|string',
+            'religion_and_moral' => 'nullable|string',
+            'social_emotional_and_autonomy' => 'nullable|string',
+            'language' => 'nullable|string',
+            'cognitive' => 'nullable|string',
+            'physical' => 'nullable|string',
+            'art' => 'nullable|string',
+            'extracurricular' => 'nullable|string|min:3|max:20',
+            'grade_of_extracurricular' => 'nullable|string|in:A,B,C,K',
+            'description' => 'nullable|string',
+            'sick' => 'nullable|numeric',
+            'permit' => 'nullable|numeric',
+            'absent' => 'nullable|numeric',
+            'note_for_parents' => 'nullable|string',
+            'date_of_report' => 'nullable|date',
+        ]);
 
-        if ($validator->fails()){
-            return response()->json($validator->messages(), 200);
+        if ($validator->fails()) {
+            return redirect()->route('report.edit', $report->id)->withErrors($validator)->withInput();
         }
 
-        $report = Report::find($id);
-
-        if (!$report) {
-            return $this->responseHandler(null, 404, 'Tidak ada rapor dengan id:' . $id);
-        }
-
-        $report->fill($request->all())->save();
-
-        return $this->responseHandler(['report' => $report], 201, 'Data rapor berhasil di update');
+        $report->update($request->all());
+        return redirect()->route('report.index')->with('success','Report updated successfully.');
     }
 
     /**
@@ -104,16 +132,9 @@ class ReportController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request, $id = null)
+    public function destroy(Report $report)
     {
-        $report = Report::find($id);
-
-        if (!$report) {
-            return $this->responseHandler(null, 404, 'Tidak ada rapor dengan id:' . $id);
-        }
-
         $report->delete();
-
-        return $this->responseHandler(['id' => $id], 200, 'Berhasil menghapus rapor');
+        return redirect()->route('report.index')->with('success','Report deleted successfully');
     }
 }

@@ -16,9 +16,8 @@ class FeeController extends Controller
      */
     public function index()
     {
-        $student = Student::where('user_id', auth()->user()->id)->first();
-        $fee = Fee::where('student_id', $student->id)->first();
-        return view('pages.fee', compact('fee'));
+        $fees = Fee::all();
+        return view('admin.fee.index', compact('fees'));
     }
 
     /**
@@ -26,17 +25,9 @@ class FeeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
-        $validator = Validator::make($request->all(), Fee::$rules['create']);
-
-        if ($validator->fails()){
-            return response()->json($validator->messages(), 200);
-        }
-
-        $fee = Fee::create($request->all());
-
-        return $this->responseHandler(['fee' => $fee], 201, 'Berhasil membuat SPP baru');
+        return view('admin.fee.create');
     }
 
     /**
@@ -47,7 +38,28 @@ class FeeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'student_id' => 'required|numeric',
+            'july' => 'required|numeric',
+            'august' => 'required|numeric',
+            'september' => 'required|numeric',
+            'october' => 'required|numeric',
+            'november' => 'required|numeric',
+            'december' => 'required|numeric',
+            'january' => 'required|numeric',
+            'february' => 'required|numeric',
+            'march' => 'required|numeric',
+            'april' => 'required|numeric',
+            'may' => 'required|numeric',
+            'june' => 'required|numeric',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->route('fee.create')->withErrors($validator)->withInput();
+        }
+
+        Fee::create($request->all());
+        return redirect()->route('fee.index')->with('success','Fee created successfully.');
     }
 
     /**
@@ -56,9 +68,9 @@ class FeeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Fee $fee)
     {
-        //
+        return view('admin.fee.show',compact('fee'));
     }
 
     /**
@@ -67,9 +79,9 @@ class FeeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Fee $fee)
     {
-        //
+        return view('admin.fee.edit',compact('fee'));
     }
 
     /**
@@ -79,23 +91,30 @@ class FeeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id = null)
+    public function update(Request $request, Fee $fee)
     {
-        $validator = Validator::make($request->all(), Fee::$rules['update']);
+        $validator = Validator::make($request->all(), [
+            'student_id' => 'nullable|numeric',
+            'july' => 'nullable|numeric',
+            'august' => 'nullable|numeric',
+            'september' => 'nullable|numeric',
+            'october' => 'nullable|numeric',
+            'november' => 'nullable|numeric',
+            'december' => 'nullable|numeric',
+            'january' => 'nullable|numeric',
+            'february' => 'nullable|numeric',
+            'march' => 'nullable|numeric',
+            'april' => 'nullable|numeric',
+            'may' => 'nullable|numeric',
+            'june' => 'nullable|numeric',
+        ]);
 
-        if ($validator->fails()){
-            return response()->json($validator->messages(), 200);
+        if ($validator->fails()) {
+            return redirect()->route('fee.edit', $fee->id)->withErrors($validator)->withInput();
         }
 
-        $fee = Fee::find($id);
-
-        if (!$fee) {
-            return $this->responseHandler(null, 404, 'Tidak ada SPP dengan id:' . $id);
-        }
-
-        $fee->fill($request->all())->save();
-
-        return $this->responseHandler(['fee' => $fee], 201, 'Data SPP berhasil di update');
+        $fee->update($request->all());
+        return redirect()->route('fee.index')->with('success','Fee updated successfully.');
     }
 
     /**
@@ -104,16 +123,9 @@ class FeeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request, $id = null)
+    public function destroy(Fee $fee)
     {
-        $fee = Fee::find($id);
-
-        if (!$fee) {
-            return $this->responseHandler(null, 404, 'Tidak ada SPP dengan id:' . $id);
-        }
-
         $fee->delete();
-
-        return $this->responseHandler(['id' => $id], 200, 'Berhasil menghapus SPP');
+        return redirect()->route('fee.index')->with('success','Fee deleted successfully');
     }
 }
