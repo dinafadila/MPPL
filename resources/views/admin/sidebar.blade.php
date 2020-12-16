@@ -50,7 +50,7 @@
 
 
           <li class="nav-item">
-            <a href="{{ route('ad_calendar') }}" <?php if($thisPage == "ad_calendar") echo "class='nav-link active'"; ?> class='nav-link'>
+            <a href="{{ route('calendar') }}" <?php if($thisPage == "ad_calendar") echo "class='nav-link active'"; ?> class='nav-link'>
             <i class="nav-icon far fa-calendar-alt"></i>
               <p>
                 Kalender Akademik

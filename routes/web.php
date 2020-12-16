@@ -71,4 +71,16 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('admin.editspp');
 	})->name('editspp');
 
+	Route::get('admin/editcalendar', function () {
+		return view('admin.editcalendar');
+	})->name('editcalendar');
+
+	Route::get('admin/tambahcalendar', function () {
+		return view('admin.tambahcalendar');
+	})->name('tambahcalendar');
+
+	Route::get('admin/calendar', function () {
+		return view('admin.calendar');
+	})->name('calendar');
+
 });
