@@ -79,8 +79,8 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('admin.tambahcalendar');
 	})->name('tambahcalendar');
 
-	Route::get('admin/calendar', function () {
-		return view('admin.calendar');
-	})->name('calendar');
+	Route::get('admin/adcalendar', function () {
+		return view('admin.adcalendar');
+	})->name('adcalendar');
 
 });

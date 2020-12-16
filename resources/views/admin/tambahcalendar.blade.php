@@ -1,4 +1,4 @@
-<?php $thisPage="ad_calendar"; ?>
+<?php $thisPage="adcalendar"; ?>
 <html>
 <head>
   <meta charset="utf-8">
