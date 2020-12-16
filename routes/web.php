@@ -67,4 +67,17 @@ Route::group(['prefix' => 'admin'], function () {
 	Route::get('/editspp', function () {
 		return view('admin.editspp');
 	})->name('editspp');
+
+	Route::get('/editcalendar', function () {
+		return view('admin.editcalendar');
+	})->name('editcalendar');
+
+	Route::get('/tambahcalendar', function () {
+		return view('admin.tambahcalendar');
+	})->name('tambahcalendar');
+
+	Route::get('/adcalendar', function () {
+		return view('admin.adcalendar');
+	})->name('adcalendar');
+
 });
