@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Report;
+use App\Models\Student;
 
 class ReportController extends Controller
 {
@@ -15,8 +16,9 @@ class ReportController extends Controller
      */
     public function index()
     {
-        $reports = Report::all();
-        return $this->responseHandler(['reports' => $reports], 200, 'Berhasil memperoleh seluruh rapor');
+        $student = Student::where('user_id', auth()->user()->id)->first();
+        $report = Report::where('student_id', $student->id)->first();
+        return view('pages.report', compact('report'));
     }
 
     /**

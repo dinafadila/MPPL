@@ -15,8 +15,8 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $students = Student::all();
-        return $this->responseHandler(['students' => $students], 200, 'Berhasil memperoleh seluruh siswa');
+        $student = Student::where('user_id', auth()->user()->id)->first();
+        return view('pages.biodata', compact('student'));
     }
 
     /**

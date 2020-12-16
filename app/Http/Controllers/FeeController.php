@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Fee;
+use App\Models\Student;
 
 class FeeController extends Controller
 {
@@ -15,8 +16,9 @@ class FeeController extends Controller
      */
     public function index()
     {
-        $fees = Fee::all();
-        return $this->responseHandler(['fees' => $fees], 200, 'Berhasil memperoleh seluruh SPP');
+        $student = Student::where('user_id', auth()->user()->id)->first();
+        $fee = Fee::where('student_id', $student->id)->first();
+        return view('pages.fee', compact('fee'));
     }
 
     /**

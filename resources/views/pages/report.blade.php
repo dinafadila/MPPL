@@ -7,7 +7,9 @@
       <div class="card">
         <div class="card-header card-header-success">
           <h4 class="card-title">Rapot Anak</h4>
-          <p class="card-category">Semester Ganjil</p>
+          <p class="card-category">Kelas {{ $report->group }}</p>
+          <p class="card-category">Semester {{ $report->semester }}</p>
+          <p class="card-category">{{ $report->school_year }}</p>
         </div>
         <br>
         <!-- NAVBAR UNTUK BIDANG PENGEMBANGAN (masih coba)
@@ -43,10 +45,8 @@
                     <td>
                       <div class="form-group">
                         <label for="exampleFormControlTextarea1">Keterangan</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      <p class="form-control" id="exampleFormControlTextarea1" rows="3">{{ $report->religion_and_moral }}</p>
                       </div>
-                      <p>Upload Dokumentasi Kegiatan</p>
-                      <input id="input-b2" name="input-b2" type="file" class="file" data-show-preview="false">
                     </td>
                   </tr>
                   <tr>
@@ -58,15 +58,12 @@
                     <td>
                       <div class="form-group">
                         <label for="exampleFormControlTextarea1">Keterangan</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      <p class="form-control" id="exampleFormControlTextarea1" rows="3">{{ $report->social_emotional_and_autonomy }}</p>
                       </div>
-                      <p>Upload Dokumentasi Kegiatan</p>
-                      <input id="input-b2" name="input-b2" type="file" class="file" data-show-preview="false">
                     </td>
                   </tr>
                 </tbody>
               </table>
-
               <table class="table">
                 <thead class=" text-success">
                 <tbody>
@@ -84,10 +81,8 @@
                     <td>
                       <div class="form-group">
                         <label for="exampleFormControlTextarea1">Keterangan</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      <p class="form-control" id="exampleFormControlTextarea1" rows="3">{{ $report->language }}</p>
                       </div>
-                      <p>Upload Dokumentasi Kegiatan</p>
-                      <input id="input-b2" name="input-b2" type="file" class="file" data-show-preview="false">
                     </td>
                   </tr>
                   <tr>
@@ -99,10 +94,8 @@
                     <td>
                       <div class="form-group">
                         <label for="exampleFormControlTextarea1">Keterangan</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      <p class="form-control" id="exampleFormControlTextarea1" rows="3">{{ $report->cognitive }}</p>
                       </div>
-                      <p>Upload Dokumentasi Kegiatan</p>
-                      <input id="input-b2" name="input-b2" type="file" class="file" data-show-preview="false">
                     </td>
                   </tr>
                   <tr>
@@ -114,10 +107,8 @@
                     <td>
                       <div class="form-group">
                         <label for="exampleFormControlTextarea1">Keterangan</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      <p class="form-control" id="exampleFormControlTextarea1" rows="3">{{ $report->physical }}</p>
                       </div>
-                      <p>Upload Dokumentasi Kegiatan</p>
-                      <input id="input-b2" name="input-b2" type="file" class="file" data-show-preview="false">
                     </td>
                   </tr>
                   <tr>
@@ -129,19 +120,99 @@
                     <td>
                       <div class="form-group">
                         <label for="exampleFormControlTextarea1">Keterangan</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <p class="form-control" id="exampleFormControlTextarea1" rows="3">{{ $report->art }}</p>
                       </div>
-                      <p>Upload Dokumentasi Kegiatan</p>
-                      <input id="input-b2" name="input-b2" type="file" class="file" data-show-preview="false">
                     </td>
                   </tr>
                 </tbody>
               </table>
-              
-              <div class = "text-right">
-                <button type="update" class="btn btn-warning">{{ __('Update') }}</button>
-                <button type="submit" class="btn btn-success">{{ __('Save') }}</button>
-              </div>
+              <table class="table">
+                <thead class=" text-success">
+                <tbody>
+                  <tr>
+                    <th>
+                      EKSTRAKURIKULER
+                    </th>
+                  </tr>
+                  <tr>
+                    <td>
+                      {{ $report->extracurricular }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Nilai {{ $report->extracurricular }}</label>
+                        <p class="form-control" id="exampleFormControlTextarea1" rows="3">{{ $report->grade_of_extracurricular }}</p>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Keterangan {{ $report->extracurricular }}</label>
+                        <p class="form-control" id="exampleFormControlTextarea1" rows="3">{{ $report->description }}</p>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="table">
+                <thead class=" text-success">
+                <tbody>
+                  <tr>
+                    <th>
+                      KETIDAKHADIRAN
+                    </th>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Sakit</label>
+                        <p class="form-control" id="exampleFormControlTextarea1" rows="3">{{ $report->sick }}</p>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Izin</label>
+                        <p class="form-control" id="exampleFormControlTextarea1" rows="3">{{ $report->permit }}</p>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Tanpa Keterangan</label>
+                        <p class="form-control" id="exampleFormControlTextarea1" rows="3">{{ $report->absent }}</p>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="table">
+                <thead class=" text-success">
+                <tbody>
+                  <tr>
+                    <div class="form-group">
+                      <label for="exampleFormControlTextarea1">Catatan untuk Orang Tua</label>
+                      <p class="form-control" id="exampleFormControlTextarea1" rows="3">{{ $report->note_for_parents }}</p>
+                    </div>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="table">
+                <thead class=" text-success">
+                <tbody>
+                  <tr>
+                    <div class="form-group">
+                      <label for="exampleFormControlTextarea1">Tanggal Rapot</label>
+                      <p class="form-control" id="exampleFormControlTextarea1" rows="3">{{ $report->date_of_report }}</p>
+                    </div>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>

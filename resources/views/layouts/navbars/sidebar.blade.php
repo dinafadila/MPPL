@@ -28,13 +28,19 @@
           <ul class="nav">
           </ul>
         </div>
-      </li> !-->  
+      </li> !-->
       <li class="nav-item{{ $activePage == 'profile' ? ' active' : '' }}">
-            <a class="nav-link" href="{{ route('profile.edit') }}">
-              <i class="material-icons">content_paste</i>
-              <p>{{ __('Biodata') }}</p>
-            </a>
-          </li>   
+        <a class="nav-link" href="{{ route('profile.edit') }}">
+          <i class="material-icons">account_circle</i>
+            <p>{{ __('Profile') }}</p>
+        </a>
+      </li>
+      <li class="nav-item{{ $activePage == 'biodata' ? ' active' : '' }}">
+        <a class="nav-link" href="{{ route('biodata') }}">
+          <i class="material-icons">content_paste</i>
+            <p>{{ __('Biodata Anak') }}</p>
+        </a>
+      </li>   
       <!-- <li class="nav-item{{ $activePage == 'user-management' ? ' active' : '' }}">
           <a class="nav-link" href="{{ route('user.index') }}">
               <span class="sidebar-mini"> UM </span>

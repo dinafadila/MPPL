@@ -23,8 +23,8 @@ class CreateFeesTable extends Migration
                 'Oktober', 'November', 'Desember'
             ]);
             $table->date('date_of_payment');
-            $table->integer('school_fee');
-            $table->integer('entrance_fee');
+            $table->integer('school_fee')->nullable();
+            $table->integer('entrance_fee')->nullable();
             $table->enum('status', ['Lunas', 'Belum Lunas']);
             $table->timestamps();
         });
