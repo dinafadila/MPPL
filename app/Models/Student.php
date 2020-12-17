@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Report;
+use App\Models\Fee;
 
 class Student extends Model
 {
@@ -55,4 +57,14 @@ class Student extends Model
             'mother_name' => 'nullable|string|min:3|max:50',
         ],
     ];
+
+    public function reports()
+    {
+        return $this->hasMany(Report::class);
+    }
+
+    public function fees()
+    {
+        return $this->hasMany(Fee::class);
+    }
 }

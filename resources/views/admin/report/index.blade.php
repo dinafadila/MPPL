@@ -86,7 +86,7 @@
                 @foreach ($reports as $report)
                 <tr>
                     <td>
-                        {{ $report->student_id }}
+                        {{ $report->student->name }}
                     </td>
                     <td>
                         {{ $report->group }}

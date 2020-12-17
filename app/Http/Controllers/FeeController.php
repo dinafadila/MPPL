@@ -17,7 +17,8 @@ class FeeController extends Controller
     public function index()
     {
         $fees = Fee::all();
-        return view('admin.fee.index', compact('fees'));
+        $student = Student::find(1);
+        return view('admin.fee.index', compact('fees', 'student'));
     }
 
     /**

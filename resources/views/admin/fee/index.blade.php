@@ -110,7 +110,7 @@
                 @foreach ($fees as $fee)
                 <tr>
                     <td>
-                        {{ $fee->student_id }}
+                        {{ $fee->student->name }}
                     </td>
                     <td>
                         {{ $fee->july }}

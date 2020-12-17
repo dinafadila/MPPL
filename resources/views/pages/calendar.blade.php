@@ -40,10 +40,10 @@
                       {{ $calendar->name_of_event }}
                     </td>
                     <td>
-                      {{ $calendar->start_date }}
+                      {{ $calendar->date_of_start }}
                     </td>
                     <td>
-                      {{ $calendar->end_date }}
+                      {{ $calendar->date_of_end }}
                     </td>
                   </tr>
                   @endforeach

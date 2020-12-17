@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Report;
+use App\Models\Student;
 
 class ReportController extends Controller
 {
@@ -16,7 +17,8 @@ class ReportController extends Controller
     public function index()
     {
         $reports = Report::all();
-        return view('admin.report.index', compact('reports'));
+        $student = Student::find(1);
+        return view('admin.report.index', compact('reports', 'student'));
     }
 
     /**

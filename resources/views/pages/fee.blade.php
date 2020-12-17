@@ -15,122 +15,79 @@
               <table class="table">
                 <thead class=" text-primary">
                   <th>
-                    Bulan
+                    Jul
                   </th>
                   <th>
-                    Tanggal
+                    Agu
                   </th>
                   <th>
-                    SPP
+                    Sep
                   </th>
                   <th>
-                    Uang Pangkal
+                    Okt
                   </th>
                   <th>
-                    Keterangan
+                    Nov
+                  </th>
+                  <th>
+                    Des
+                  </th>
+                  <th>
+                    Jan
+                  </th>
+                  <th>
+                    Feb
+                  </th>
+                  <th>
+                    Mar
+                  </th>
+                  <th>
+                    Apr
+                  </th>
+                  <th>
+                    Mei
+                  </th>
+                  <th>
+                    Jun
                   </th>
                 </thead>
                 <tbody>
                   <tr>
                     <td>
-                      Juli
+                      {{ $fee->july }}
                     </td>
                     <td>
-                      10-07-2020
+                      {{ $fee->august }}
                     </td>
                     <td>
-                      Rp120.000 
+                      {{ $fee->september }}
                     </td>
                     <td>
-                      Rp100.000
-                    </td>
-                    <td class="text-primary">
-                      LUNAS
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      Agustus
+                      {{ $fee->october }}
                     </td>
                     <td>
-                      10-08-2020
+                      {{ $fee->november }}
                     </td>
                     <td>
-                      Rp120.000
+                      {{ $fee->december }}
                     </td>
                     <td>
-                      Rp100.000
-                    </td>
-                    <td class="text-primary">
-                    LUNAS
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      September
+                      {{ $fee->january }}
                     </td>
                     <td>
-                    10-09-2020
+                      {{ $fee->february }}
                     </td>
                     <td>
-                      Rp120.000
+                      {{ $fee->march }}
                     </td>
                     <td>
-                      Rp100.000
-                    </td>
-                    <td class="text-primary">
-                    LUNAS
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      Oktober
+                      {{ $fee->april }}
                     </td>
                     <td>
-                    10-10-2020
+                      {{ $fee->may }}
                     </td>
                     <td>
-                      Rp120.000
-                    </td>
-                    <td>
-                    Rp100.000
-                    </td>
-                    <td class="text-primary">
-                    LUNAS
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      November
-                    </td>
-                    <td>
-                    10-11-2020
-                    </td>
-                    <td>
-                      Rp120.000
-                    </td>
-                    <td>
-                    Rp100.000
-                    </td>
-                    <td class="text-primary">
-                    LUNAS
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      Desember
-                    </td>
-                    <td>
-                      
-                    </td>
-                    <td>
-                    
-                    </td>
-                    <td>
-                      
-                    </td>
-                    <td class="text-primary">
-                    BELUM LUNAS
+                      {{ $fee->june }}
                     </td>
                   </tr>
                 </tbody>
