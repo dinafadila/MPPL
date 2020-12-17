@@ -102,6 +102,9 @@
                         Mei
                     </th>
                     <th>
+                        Jun
+                    </th>
+                    <th>
                         Pengaturan
                     </th>
                 </tr>
@@ -145,7 +148,10 @@
                     <td>
                         {{ $fee->may }}
                     </td>
-                    <td class="project-actions text-right">
+                    <td>
+                        {{ $fee->june }}
+                    </td>
+                    <td class="project-actions">
                         <form action="{{ route('fee.destroy', $fee->id) }}" method="POST">
                             <a class="btn btn-info btn-sm" href="{{ route('fee.edit', $fee->id) }}">
                                 <i class="fas fa-pencil-alt"></i>

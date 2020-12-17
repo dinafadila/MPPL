@@ -98,7 +98,7 @@
                             <td>
                                 {{ $calendar->date_of_end }}
                             </td>
-                            <td class="project-actions text-right">
+                            <td class="project-actions">
                                 <form action="{{ route('calendar.destroy', $calendar->id) }}" method="POST">
                                     <a class="btn btn-info btn-sm" href="{{ route('calendar.edit', $calendar->id) }}">
                                         <i class="fas fa-pencil-alt"></i>

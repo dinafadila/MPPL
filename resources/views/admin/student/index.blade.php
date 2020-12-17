@@ -118,7 +118,7 @@
                     <td>
                         {{ $student->phone }}
                     </td>
-                    <td class="project-actions text-right">
+                    <td class="project-actions">
                         <form action="{{ route('student.destroy', $student->id) }}" method="POST">
                             <a class="btn btn-info btn-sm" href="{{ route('student.edit', $student->id) }}">
                                 <i class="fas fa-pencil-alt"></i>
